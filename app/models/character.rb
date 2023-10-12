@@ -7,4 +7,15 @@ class Character < ApplicationRecord
   validates :power, presence: true
   validates :combat, presence: true
   validates :image, presence: true
+  validates_presence_of :full_name, allow_nil: true
+  validates_presence_of :place_of_birth, allow_nil: true
+  validates_presence_of :publisher, allow_nil: true
+  validates_presence_of :alignment, allow_nil: true
+  validates_presence_of :gender, allow_nil: true
+  validates_presence_of :race, allow_nil: true
+  validates_presence_of :height, allow_nil: true
+  validates_presence_of :weight, allow_nil: true
+  validates_presence_of :eye_color, allow_nil: true
+  validates_presence_of :hair_color, allow_nil: true
+  validates_presence_of :group_affiliation, allow_nil: true
 end
