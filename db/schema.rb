@@ -16,6 +16,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_210231) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.integer "intelligence"
+    t.integer "strength"
+    t.integer "speed"
+    t.integer "durability"
+    t.integer "power"
+    t.integer "combat"
+    t.string "full_name"
+    t.string "place_of_birth"
+    t.string "publisher"
+    t.string "alignment"
+    t.string "gender"
+    t.string "race"
+    t.string "height"
+    t.string "weight"
+    t.string "eye_color"
+    t.string "hair_color"
+    t.string "group_affiliation"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
