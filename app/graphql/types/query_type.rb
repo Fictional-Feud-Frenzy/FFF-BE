@@ -2,6 +2,21 @@
 
 module Types
   class QueryType < Types::BaseObject
+    # /characters
+    field :characters, [Types::CharacterType], null: false
+
+    def characters
+      Character.all
+    end
+
+    field :character, Types::CharacterType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def character(id:)
+      Character.find(id)
+    end
+
     field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
       argument :id, ID, required: true, description: "ID of the object."
     end
