@@ -1,4 +1,9 @@
-# class Mutation::CreateCharacter < Mutations::BaseMutation
+module Mutations
+  class CreateCharacter < GraphQL::Schema::Mutation
+  end
+end
+
+# class Mutations::CreateCharacter < Mutations::BaseMutation
 #   argument :name, String, required: true
 #   argument :intelligence, Integer, required: true
 #   argument :strength, Integer, required: true
