@@ -1,5 +1,5 @@
 module Mutations
-  class CreateCharacter < GraphQL::Schema::Mutation
+  class CreateCharacter
   end
 end
 
