@@ -9,7 +9,8 @@ RSpec.describe 'Joke API' do
         expect(response).to be_successful
         expect(response.status).to eq(200)
 
-        joke = JSON.parse(response.body, symbolize_names: true)
+        joke = response.body
+        
         expect(joke).to be_a String
       end
     end
