@@ -88,7 +88,7 @@ namespace :superhero do
           combat_weight = (data['powerstats']['combat'].to_f*0.20)
 
           weighted_average = intelligence_weight + strength_weight + speed_weight+ durability_weight + power_weight + combat_weight
-          character.power_stats_weighted_average = weighted_average
+          character.power_stats_weighted_average = weighted_average.floor
       
           character.save
           id += 1
