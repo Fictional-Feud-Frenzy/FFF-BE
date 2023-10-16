@@ -22,6 +22,7 @@ module Types
     field :hair_color, String
     field :group_affiliation, String
     field :image, String
+    field :power_stats_weighted_average, Float
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
   end
