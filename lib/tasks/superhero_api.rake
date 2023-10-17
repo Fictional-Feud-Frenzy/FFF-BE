@@ -8,16 +8,16 @@ namespace :superhero do
 
     id = 1
 
-    conn = Faraday.new(url: "https://superheroapi.com/api/10111528630893278/") do |faraday|
-      faraday.request :url_encoded
-      faraday.response :json, content_type: /\bjson$/
-      faraday.use FaradayMiddleware::FollowRedirects, limit: 5
-    end
+    # conn = Faraday.new(url: "https://superheroapi.com/api/10111528630893278/") do |faraday|
+    #   faraday.request :url_encoded
+    #   faraday.response :json, content_type: /\bjson$/
+    #   faraday.use FaradayMiddleware::FollowRedirects, limit: 5
+    # end
     
 
     loop do
-        response = conn.get("#{id}")
-
+        # response = conn.get("#{id}")
+        response = SuperheroService.get_superhero_data(id)
         if response.body['response'] == "success"
           data = response.body
 
@@ -86,10 +86,10 @@ namespace :superhero do
           power_weight = (data['powerstats']['power'].to_f*0.15)
           durability_weight = (data['powerstats']['durability'].to_f*0.20)
           combat_weight = (data['powerstats']['combat'].to_f*0.20)
-
+require 'pry'; binding.pry
           weighted_average = intelligence_weight + strength_weight + speed_weight+ durability_weight + power_weight + combat_weight
           character.power_stats_weighted_average = weighted_average.floor
-      
+      require 'pry'; binding.pry
           character.save
           id += 1
         else
