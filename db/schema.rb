@@ -34,9 +34,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_201538) do
     t.string "hair_color"
     t.string "group_affiliation"
     t.string "image"
-    t.float "power_stats_weighted_average"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "power_stats_weighted_average"
   end
 
 end
