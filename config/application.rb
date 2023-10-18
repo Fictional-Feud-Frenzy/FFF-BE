@@ -27,6 +27,13 @@ module FffBe
 
     config.middleware.use ActionDispatch::Session::CookieStore
 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'https://fff-fe.vercel.app' # Your React development server's address
+        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
