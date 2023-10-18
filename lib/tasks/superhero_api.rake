@@ -21,7 +21,7 @@ namespace :superhero do
         if response.body['response'] == "success"
           data = response.body
 
-          character = Character.find_or_initialize_by(superhero_id: data['id'])
+          character = Character.find_or_initialize_by(id: data['id'])
 
 
 #           if data['powerstats']['intelligence'] == "null" || data['powerstats']['intelligence'] == ""

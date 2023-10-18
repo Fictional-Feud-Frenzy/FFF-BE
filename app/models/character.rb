@@ -1,6 +1,5 @@
 class Character < ApplicationRecord
-  attr_accessor :superhero_id,
-                :name,
+  attr_accessor :name,
                 :full_name,
                 :intelligence,
                 :strength,
@@ -21,16 +20,14 @@ class Character < ApplicationRecord
                 :image,
                 :power_stats_weighted_average
 
-  validates :name, presence: true
-  validates :intelligence, presence: true
-  validates :strength, presence: true
-  validates :speed, presence: true
-  validates :durability, presence: true
-  validates :power, presence: true
-  validates :combat, presence: true
+                validates :intelligence, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
+                validates :strength, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
+                validates :speed, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
+                validates :durability, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
+                validates :power, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
+                validates :combat, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
 
   def initialize(data)
-    @superhero_id = data['id']
     @name = data['name']
     @full_name = data['biography']['full-name']
     @intelligence = data['powerstats']['intelligence']
