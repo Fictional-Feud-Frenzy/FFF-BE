@@ -2,26 +2,19 @@
 
 module Types
   class QueryType < Types::BaseObject
+    description "The query root of this schema"
 
-    field :characters, [Types::CharacterType], null: false
-    field :get_characters, [Types::CharacterType], null: false
-    field :character, [Types::CharacterType], null: false
-
-    field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
-      argument :id, ID, required: true, description: "ID of the object."
+    field :characters, [Types::CharacterType], null: false, description: "Get all characters"
+    field :character, Types::CharacterType, null: true, description: "Get a character by ID" do
+      argument :id, ID, required: true
     end
 
-    def node(id:)
-      context.schema.object_from_id(id, context)
+    def characters
+      Character.all
     end
 
-    field :nodes, [Types::NodeType, null: true], null: true, description: "Fetches a list of objects given a list of IDs." do
-      argument :ids, [ID], required: true, description: "IDs of the objects."
+    def character(id:)
+      Character.find_by(id: id)
     end
-
-    def nodes(ids:)
-      ids.map { |id| context.schema.object_from_id(id, context) }
-    end
-
   end
 end
