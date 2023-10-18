@@ -8,22 +8,44 @@ namespace :superhero do
 
     character_id = 1
 
+    loop do
+        
+        response = SuperheroService.get_superhero_data(character_id)
+        if response.body['response'] == "success"
+          data = response.body
+          require 'pry'; binding.pry
+
+          # rails db:{drop,create,migrate}
+
+# Do we need to add id to the character schema?
+          character = Character.find_by(id: data['id'])
+          # character = Character.find_by(full_name: data['biography']['full-name'])
+
+          if character == nil
+            character = Character.new(data)
+          else
+            character.update(data)
+          end
+  
+          character.save
+          require 'pry'; binding.pry
+          character_id += 1
+        else
+          break
+        end
+    end
+    puts "Data import complete!"
+  end
+end
+
     # conn = Faraday.new(url: "https://superheroapi.com/api/10111528630893278/") do |faraday|
     #   faraday.request :url_encoded
     #   faraday.response :json, content_type: /\bjson$/
     #   faraday.use FaradayMiddleware::FollowRedirects, limit: 5
     # end
-    
+    # response = conn.get("#{id}")
 
-    loop do
-        # response = conn.get("#{id}")
-        response = SuperheroService.get_superhero_data(character_id)
-        if response.body['response'] == "success"
-          data = response.body
-
-          character = Character.find_or_initialize_by(id: data['id'])
-
-
+        
 #           if data['powerstats']['intelligence'] == "null" || data['powerstats']['intelligence'] == ""
 #             id += 1
 #             next
@@ -66,7 +88,7 @@ namespace :superhero do
 #             character.combat = data['powerstats']['combat']
 #           end
 
-
+#           character.id = data['id']
 #           character.name = data['name']
 #           character.full_name = data['biography']['full-name']
 #           character.place_of_birth = data['biography']['place-of-birth']
@@ -92,12 +114,3 @@ namespace :superhero do
 #           character.power_stats_weighted_average = weighted_average.floor
 #       require 'pry'; binding.pry
           # character.save
-          character.save
-          character_id += 1
-        else
-          break
-        end
-    end
-    puts "Data import complete!"
-  end
-end

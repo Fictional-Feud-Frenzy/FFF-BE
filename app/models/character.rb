@@ -20,6 +20,7 @@ class Character < ApplicationRecord
                 :image,
                 :power_stats_weighted_average
 
+                validates :name, presence: true
                 validates :intelligence, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
                 validates :strength, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
                 validates :speed, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
@@ -28,6 +29,8 @@ class Character < ApplicationRecord
                 validates :combat, presence: true, format: { with: /\A[^nN]+[^uU]+[^lL]+[^lL]+\z/ }
 
   def initialize(data)
+    require 'pry'; binding.pry
+    @superhero_id = data['id']
     @name = data['name']
     @full_name = data['biography']['full-name']
     @intelligence = data['powerstats']['intelligence']
