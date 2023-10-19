@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"superman beat batman
+        in a fight.  Please give a short comic book story of how the battle went."}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.10.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Oct 2023 23:18:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-de8ddsfi4founoahw49kwsos
+      Openai-Processing-Ms:
+      - '27366'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89950'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 32ms
+      X-Request-Id:
+      - 0f27f6de9157b0b389dd1f1a54269a66
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 818cbd1c3c09dbc2-LAX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8BWZGUokO9gSubhlYqNy43iiDjQwi",
+          "object": "chat.completion",
+          "created": 1697757490,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "In the mighty clash between two iconic superheroes, Superman and Batman faced off in an epic battle that would forever leave a mark on their friendship. \n\nAs the sun set over Gotham City, a mysterious rift began to form in the sky, unleashing immense energy and chaos upon the city. Concerned for the safety of innocent lives, Superman swiftly arrived, ready to restore peace and order.\n\nSurrounded by the destructive force, Batman emerged from the shadows, determined to protect his beloved city by any means necessary. But deep down, he knew that his tactical skills alone might not be enough against the unparalleled strength of the Man of Steel.\n\nWith grim determination, Batman employed his vast array of gadgets and technical prowess, launching an all-out assault against Superman. But his attacks seemed futile as the Man of Steel effortlessly dodged each blow, his enhanced hearing and quick reflexes guiding him flawlessly.\n\nUndeterred by Batman's relentless attacks, Superman decided to reason with his friend, knowing that beneath the layer of invincible armor, Bruce Wayne was a man driven by a deep sense of justice. He spoke of the immense power they both possessed and how it could be utilized toward the common goal of protecting the innocent.\n\nHowever, consumed by his unwavering determination, Batman refused to relent. Unleashing his most powerful weapon, he fired a kryptonite-infused projectile at the Man of Steel, momentarily weakening Superman and exploiting his only known weakness.\n\nStruggling to regain his strength, Superman remained surprisingly calm, acknowledging the pure intentions behind Batman's actions. He reached out to his friend, urging him to redirect his anger and use his unparalleled intelligence and resources for a united cause in the fight against evil.\n\nRealizing the error of his ways, Batman called off his attack, overcome by the genuine trust and friendship Superman had shown him in the midst of their intense battle.\n\nAs the rift in the sky began to close, both heroes stood side by side, solemnly contemplating the grueling fight they had just endured. They had come to reconcile their differences, recognizing that their unique strengths and perspectives could complement each other in ways they had never considered before.\n\nSuperman and Batman vowed to join forces, pledging to protect their cities and the world from the darkness that threatened it. Through their newfound collaboration and unwavering determination, they became the epitome of the superhero alliance the world so desperately needed.\n\nAnd so, in the annals of comic book history, the story of Superman defeating Batman became a catalyst for an unmatched partnership, proving that even in the harshest battles, true friendships can emerge stronger than ever."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 40,
+            "completion_tokens": 523,
+            "total_tokens": 563
+          }
+        }
+  recorded_at: Thu, 19 Oct 2023 23:18:38 GMT
+recorded_with: VCR 6.2.0
