@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a helpful assistant."},{"role":"user","content":"superman ties batman
+        in a fight but then Chuck Norris comes in and beats them both. Please give
+        a short funny story with no dialogue or panels of how the battle went."}]}'
+    headers:
+      Authorization:
+      - Bearer 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
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.10.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Oct 2023 22:20:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-de8ddsfi4founoahw49kwsos
+      Openai-Processing-Ms:
+      - '24750'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89933'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 44ms
+      X-Request-Id:
+      - 2287e22c206e088f704ed044a6c1247c
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 818c674e38692b6f-LAX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-8BVea0QdWcscVtB04Du4kfOwfLGj9",
+          "object": "chat.completion",
+          "created": 1697753976,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Once upon a time, Superman and Batman found themselves engaged in an epic battle. Their punches were mighty, their kicks were fierce, and the clash between them caused shockwaves that rattled the city. The two superheroes exchanged blows, neither one wanting to back down.\n\nJust as it seemed like Superman had the upper hand, with his immense strength and heat vision ready to unleash its power, a figure emerged from the shadows. It was none other than Chuck Norris, the legendary martial arts master.\n\nWith a playful smirk, Chuck Norris joined the battle, effortlessly dodging Superman's attacks and countering with his own lightning-speed strikes. Batman, momentarily forgotten, looked on in awe as Chuck Norris displayed unmatched power and skill.\n\nSuperman's invulnerability was put to the test as Chuck Norris delivered a roundhouse kick. The Man of Steel stumbled backward in disbelief. Meanwhile, Batman, typically stoic, couldn't help but crack a smile at the unexpected turn of events.\n\nAs the battle escalated, the city became a playground for their titanic clash. Skyscrapers trembled as buildings were reduced to rubble. Chuck Norris spun with incredible grace, delivering swift, choreographed moves that seemed to defy the laws of physics.\n\nGradually, Superman and Batman realized they were no match for the unstoppable force that was Chuck Norris. Both heroes, with their pride slightly bruised, conceded defeat, realizing that sometimes even superheroes need a little help.\n\nAnd so, Superman and Batman sheepishly retreated, leaving Chuck Norris to bask in his triumphant victory. As the dust settled, Chuck Norris stood alone, surveying the chaos with a sense of pride and satisfaction.\n\nFrom that day forward, every citizen of the city knew that when it came to being a superhero, even Superman and Batman had to bow down to Chuck Norris, the ultimate champion of chaos-combat. And so, they all lived happily ever after, always hoping to contain their epic battles to more suited arenas."
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 53,
+            "completion_tokens": 394,
+            "total_tokens": 447
+          }
+        }
+  recorded_at: Thu, 19 Oct 2023 22:20:00 GMT
+recorded_with: VCR 6.2.0
