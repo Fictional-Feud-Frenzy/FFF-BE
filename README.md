@@ -1,7 +1,7 @@
-[![GitHub contributors](https://img.shields.io/github/contributors/ontrack-2305/ontrack_be)](https://github.com/ontrack-2305/ontrack_be/graphs/contributors)
-[![GitHub forks](https://img.shields.io/github/forks/ontrack-2305/ontrack_be)](https://github.com/ontrack-2305/ontrack_be/forks)
-[![GitHub Repo stars](https://img.shields.io/github/stars/ontrack-2305/ontrack_be)](https://github.com/ontrack-2305/ontrack_be/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/ontrack-2305/ontrack_be)](https://github.com/ontrack-2305/ontrack_be/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/graphs/contributors)
+[![GitHub forks](https://img.shields.io/github/forks/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/forks)
+[![GitHub Repo stars](https://img.shields.io/github/stars/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/issues)
 
 # Fictional-Feud-Frenzy (Back end Repo)
 
@@ -9,7 +9,7 @@
 
 ## About This Project
 ### Important to Note
-This is an SOA app and needs both this repo (back end) AND [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](FE REPO LINK GOES HERE - NO QUOTES) (front end) in order to be fully functioning.
+This is an SOA app and needs both this repo (back end) AND [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Fictional-Feud-Frenzy/FFF-FE) (front end) in order to be fully functioning.
 
 
 ### Overview
@@ -34,13 +34,14 @@ Overall, the purpose of the back end in the OnTrack app is to support seamless d
 * ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 * ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 * ![Postman Badge](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=fff&style=for-the-badge)
-ADD GRAPHQL BADGE
+* ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+
 
 
 
 
 ## Running On
-  - Rails 7.0.6
+  - Rails 7.0.8
   - Ruby 3.2.2
   THESE CURRENT?
 
