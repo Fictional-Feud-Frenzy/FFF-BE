@@ -13,7 +13,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.ignore_localhost = true 
   # Automatically filter sensitive data
-  config.filter_sensitive_data('<API_KEY>') { ENV['API_KEY'] }
+  config.filter_sensitive_data('ai_key') { Rails.application.credentials.openapi[:api_key] }
 
   # Enable new episodes to be recorded
   config.default_cassette_options = { :record => :new_episodes }
