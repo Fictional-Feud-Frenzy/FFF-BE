@@ -39,11 +39,11 @@ class ChatService
 
   def get_url(endpoint, payload)
     response = conn.post(endpoint) do |req|
-      req.body = JSON.dump(payload)[:choices][0][:message][:content]
+      req.body = JSON.dump(payload)
     end
     
     if response.success?
-      JSON.parse(response.body, symbolize_names: true)
+      JSON.parse(response.body, symbolize_names: true)[:choices][0][:message][:content]
     else
       raise 'Failed to fetch story'
     end
