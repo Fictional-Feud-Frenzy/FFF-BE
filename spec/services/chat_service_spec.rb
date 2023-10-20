@@ -5,7 +5,7 @@ RSpec.describe "ChatGPT service" do
     character1 = "superman"
     character2 = "batman"
 
-    chat_service = ChatService.get_story(character1, character2)
+    chat_service = ChatService.new(character1, character2).get_story
     expect(chat_service).to be_a(Hash)
   end
 
@@ -13,7 +13,7 @@ RSpec.describe "ChatGPT service" do
     character1 = "superman"
     character2 = "batman"
 
-    chat_service = ChatService.get_norris_story(character1, character2)
+    chat_service = ChatService.new(character1, character2, mode: :norris).get_story
     expect(chat_service).to be_a(Hash)
   end
 end

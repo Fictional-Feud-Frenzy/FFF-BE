@@ -29,7 +29,8 @@ module FffBe
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://fff-fe.vercel.app' # Your React development server's address
+        origins 'https://fff-fe.vercel.app' # Your React production server's address
+        # origins 'http://localhost:3000' # Your React development server's address
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end

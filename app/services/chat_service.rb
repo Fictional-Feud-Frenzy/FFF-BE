@@ -11,14 +11,14 @@ class ChatService
       messages: [
         {
           role: "system",
-          content: "You are a storyteller that imagines comic book fight scenarios."
+          content: "You are a helpful assistant."
         },
         {
           role: "user",
           content: user_content
         }
       ],
-      temperature: 0.7,
+      temperature: 0.8,
       max_tokens: 600,
       top_p: 1,
       frequency_penalty: 0,
@@ -31,9 +31,9 @@ class ChatService
 
   def user_content
     if @mode == :norris
-      "#{@winner} ties #{@loser} in a fight but then Chuck Norris comes in and beats them both. Please give a short funny story with no dialogue or panels of how the battle went."
+      "#{@winner} ties #{@loser} in a fight but then Chuck Norris comes in and beats them both. Please give a short funny story with no dialogue, panels, or markdown tags of how the battle went."
     else
-      "#{@winner} beat #{@loser} in a fight. Please give a short story of how the battle went."
+      "#{@winner} beat #{@loser} in a fight. Please give a short story with no dialogue, panels, or markdown tags of how the battle went."
     end
   end
 
@@ -41,7 +41,7 @@ class ChatService
     response = conn.post(endpoint) do |req|
       req.body = JSON.dump(payload)
     end
-
+    
     if response.success?
       JSON.parse(response.body, symbolize_names: true)
     else
