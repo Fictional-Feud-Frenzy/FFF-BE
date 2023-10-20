@@ -17,10 +17,12 @@ module Mutations
         description = ChatService.new(character1.name, character2.name, mode: :norris).getstory(character1.name, character2.name, mode: :norris)
       elsif character1.power_stats_weighted_average > character2.power_stats_weighted_average
         winner = character1
-        description = ChatService.new(character1.name, character2.name).get_story
+        hash = ChatService.new(character1.name, character2.name).get_story
+        description = hash[:choices][0][:message][:content]
       else
         winner = character2
-        description = ChatService.new(character2.name, character1.name).get_story
+        hash = ChatService.new(character2.name, character1.name).get_story
+        description = hash[:choices][0][:message][:content]
       end
 
       if character1 && character2

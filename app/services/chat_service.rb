@@ -43,7 +43,7 @@ class ChatService
     end
     
     if response.success?
-      JSON.parse(response.body, symbolize_names: true)[:choices][0][:message][:content]
+      JSON.parse(response.body, symbolize_names: true)
     else
       raise 'Failed to fetch story'
     end

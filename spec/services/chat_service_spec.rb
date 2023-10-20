@@ -17,6 +17,5 @@ RSpec.describe "ChatGPT service" do
     chat_service = ChatService.new(character1, character2, mode: :norris).get_story
     expect(chat_service).to be_a(Hash)
     expect(chat_service[:choices][0][:message][:content]).to be_a(String)
-
   end
 end
