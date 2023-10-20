@@ -39,7 +39,7 @@ class ChatService
 
   def get_url(endpoint, payload)
     response = conn.post(endpoint) do |req|
-      req.body = JSON.dump(payload)
+      req.body = JSON.dump(payload)[:choices][0][:message][:content]
     end
     
     if response.success?
