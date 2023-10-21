@@ -68,6 +68,7 @@ namespace :superhero do
         break
       end
     end
+
     puts "Data import complete!"
   end
 end
