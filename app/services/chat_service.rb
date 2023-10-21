@@ -19,7 +19,7 @@ class ChatService
         }
       ],
       temperature: 0.8,
-      max_tokens: 600,
+      max_tokens: 300,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0
@@ -38,7 +38,7 @@ class ChatService
   end
 
   def get_url(endpoint, payload)
-    response = conn.post(endpoint) do |req|
+        response = conn.post(endpoint) do |req|
       req.body = JSON.dump(payload)
     end
     
