@@ -15,7 +15,7 @@ This is an SOA app and needs both this repo (back end) AND [![GitHub](https://im
 ### Overview
 This project is built to satisfy the requirements of the Turing School of Software and Design's [Capstone Project](https://mod4.turing.edu/projects/capstone/). Students come up with their own idea for an application and build it as a group project. Front end students and Back end students work together to simulate working on a full stack team
 
-<img src="fff-logo-white.png">
+<img src="app/assets/fff-logo-white.png">
                     
 ## Purpose
 
