@@ -14,7 +14,7 @@ module Mutations
 
       if character1.power_stats_weighted_average == character2.power_stats_weighted_average
         winner = Character.find_by(id: 176)
-        description = ChatService.new(character1.name, character2.name, mode: :norris).getstory(character1.name, character2.name, mode: :norris)
+        description = ChatService.new(character1.name, character2.name, mode: :norris).get_story(character1.name, character2.name, mode: :norris)
       elsif character1.power_stats_weighted_average > character2.power_stats_weighted_average
         winner = character1
         hash = ChatService.new(character1.name, character2.name).get_story
