@@ -31,9 +31,9 @@ class ChatService
 
   def user_content
     if @mode == :norris
-      "#{@winner} ties #{@loser} in a fight, but then, out of nowhere, Chuck Norris descended from the heavens and defeated them both with a swift roundhouse kick. Please give a short funny story with no dialogue, panels, or markdown tags of how the battle went."
+      "#{@winner} ties #{@loser} in a fight, but then, out of nowhere, Chuck Norris descended from the heavens and defeated them both with a swift roundhouse kick. Please give a short funny story with no dialogue, panels, or markdown tags of how the battle went. The story should be less than 300 tokens."
     else
-      "#{@winner} triumphed over #{@loser} in an epic battle. Please give a short story with no dialogue, panels, or markdown tags of how the battle went."
+      "#{@winner} triumphed over #{@loser} in an epic battle. Please give a short story with no dialogue, panels, or markdown tags of how the battle went.  The story should be less than 300 tokens."
     end
   end
 
