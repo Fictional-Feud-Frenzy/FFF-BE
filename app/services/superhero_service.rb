@@ -8,8 +8,6 @@ class SuperheroService
 
   def self.get_url(url)
     response = conn.get(url)
-    # puts "Raw Response: #{response.body}"
-    # JSON.parse(response.body)
   end
 
   def self.conn
