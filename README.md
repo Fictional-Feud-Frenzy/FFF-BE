@@ -2,6 +2,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/forks)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/Fictional-Feud-Frenzy/FFF-BE)](https://github.com/Fictional-Feud-Frenzy/FFF-BE/issues)
+![CircleCI](https://img.shields.io/circleci/build/github/Fictional-Feud-Frenzy/FFF-BE/main)
 
 # Fictional-Feud-Frenzy (Back end Repo)
 
@@ -35,6 +36,7 @@ Overall, the purpose of the back end in the Fictional-Feud_Frenzy app is to supp
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)</br>
 ![Postman Badge](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=fff&style=for-the-badge)</br>
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)</br>
+![CircleCI](https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white)
 
 
 
