@@ -33,3 +33,5 @@ coverage/
 spec/vcr_cassettes/*
 !/spec/vcr_cassettes/
 !/spec/vcr_cassettes/.keep
+
+.vscode/settings.json
