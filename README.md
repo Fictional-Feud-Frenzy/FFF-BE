@@ -65,10 +65,16 @@ bundle install
 ```
 rails db:{create,migrate}
 ```
-5. Get API key from OpenAI<br>
+
+5. Rake api data
+```
+rails superhero:import_from_api #be kind, limit 1.
+```
+
+6. Get API key from OpenAI<br>
 [![OpenAI Badge](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=fff&style=for-the-badge)](https://platform.openai.com/)<br>
 
-6. Add your keys to your credentials file like this:
+7. Add your keys to your credentials file like this:
 ```
 - Run this command to open your credentials file:
   EDITOR="code --wait" bin/rails credentials:edit
@@ -200,6 +206,7 @@ Expected Response:
       groupAffiliation
       image
       powerStatsWeightedAverage
+      // again, any character object value in the db is available
     }
   }
 ```
@@ -242,17 +249,18 @@ Expected Response:
 mutation ($character1: Int!, $character2: Int!){
   createBattle(character1: $character1, character2: $character2) {
     id
-    character1 {
+    character1 { // a character object
       id
     }
-    character2 {
+    character2 { // same
       id
     }
-    winner { 
+    winner { // also a character object
       id
       name
     }
     description
+    // createdAt, updatedAt
   }
 }
 ```
