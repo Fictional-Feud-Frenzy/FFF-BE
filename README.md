@@ -103,43 +103,174 @@ git push origin feature/AmazingFeature
   </pre>
 </div>
 
-## Response
-```
-Character Response:
-
-{
-  "id": 70,
-  "name": "Batman", - req
-  "intelligence": 100, - req
-  "strength": 26, -req
-  "speed": 27, -req
-  "durability": 50, -req
-  "power": 47, -req
-  "combat": 100, -req
-  "full-name": "Bruce Wayne",
-  "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
-  "publisher": "DC Comics",
-  "alignment": "good",
-  "gender": "Male",
-  "race": "Human",
-  "height":  "6'2",
-  "weight": "210 lb",
-  "eye-color": "blue",
-  "hair-color": "black"
-  "group-affiliation": "Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps"
-  "image": "httpss://www.superherodb.com/pictures2/portraits/10/100/639.jpg" -req
+## GraphQL Queries
+<details>
+<summary>Characters Query</summary>
+  
+```graphql
+query characters {
+  characters {
+      id
+      name
+      intelligence
+      strength
+      speed
+      durability
+      power
+      combat
+      fullName
+      publisher
+      alignment
+      image
+      // any other character value could also be queried
+  }
 }
-
-CHUCK NORRIS RESPONSE:
-
-"Chuck Norris was supposed the be the main character for the LOST series. He turned down the role because he didnt want to be the only one FOUND"
-
-AI RESPONSE:
-
-"In the darkness of a desolate city, Batman and Superman faced each other with unwavering determination. The air crackled with tension as their contrasting silhouettes cast long shadows against the moonlit skyline.\n\nBatman, relying on his mastery of strategy and gadgetry, swiftly launched a barrage of smoke pellets, enveloping the area in a thick fog. Using this momentary advantage, he unleashed a series of calculated strikes, testing Superman's invulnerability.\n\nSuperman, however, was no ordinary opponent. He possessed godlike strength and unyielding determination."
-
-
 ```
+Expected Response:
+```json
+{"data"=>
+  {"characters"=>
+    [{"id"=>"583",
+      "name"=>"Character 1",
+      "intelligence"=>80,
+      "strength"=>90,
+      "speed"=>70,
+      "durability"=>85,
+      "power"=>75,
+      "combat"=>88,
+      "fullName"=>"Full Name 1",
+      "publisher"=>"Publisher 1",
+      "alignment"=>"Good",
+      "image"=>"image_url_1"},
+     {"id"=>"584",
+      "name"=>"Character 2",
+      "intelligence"=>85,
+      "strength"=>92,
+      "speed"=>75,
+      "durability"=>80,
+      "power"=>78,
+      "combat"=>90,
+      "fullName"=>"Full Name 2",
+      "publisher"=>"Publisher 2",
+      "alignment"=>"Evil",
+      "image"=>"image_url_2"},
+     {"id"=>"585",
+      "name"=>"Character 3",
+      "intelligence"=>88,
+      "strength"=>87,
+      "speed"=>78,
+      "durability"=>89,
+      "power"=>82,
+      "combat"=>85,
+      "fullName"=>"Full Name 3",
+      "publisher"=>"Publisher 1",
+      "alignment"=>"Neutral",
+      "image"=>"image_url_3"},
+      {...}
+    ]
+  }
+}
+```
+</details>
+
+<details>
+<summary>Character Query</summary>
+  
+```graphql
+  query Character($id: ID!) {
+    character (id: $id) {
+      id
+      name
+      intelligence
+      strength
+      speed
+      durability
+      power
+      combat
+      fullName
+      placeOfBirth
+      publisher
+      alignment
+      gender
+      race
+      height
+      weight
+      eyeColor
+      hairColor
+      groupAffiliation
+      image
+      powerStatsWeightedAverage
+    }
+  }
+```
+  
+Expected Response:
+```json
+{"data"=>
+  {"character"=>
+    {"id"=>"591",
+     "name"=>"Character 1",
+     "intelligence"=>80,
+     "strength"=>90,
+     "speed"=>70,
+     "durability"=>85,
+     "power"=>75,
+     "combat"=>88,
+     "fullName"=>"Full Name 1",
+     "placeOfBirth"=>"moon",
+     "publisher"=>"Publisher 1",
+     "alignment"=>"Good",
+     "gender"=>"male",
+     "race"=>"white",
+     "height"=>"4'3",
+     "weight"=>"105",
+     "eyeColor"=>"blue",
+     "hairColor"=>"brown",
+     "groupAffiliation"=>"cool guys",
+     "image"=>"image_url_1",
+     "powerStatsWeightedAverage"=>80.0
+    }
+  }
+}
+```
+</details>
+
+<details>
+<summary>Create Battle Mutation</summary>
+
+```graphql
+mutation ($character1: Int!, $character2: Int!){
+  createBattle(character1: $character1, character2: $character2) {
+    id
+    character1 {
+      id
+    }
+    character2 {
+      id
+    }
+    winner { 
+      id
+      name
+    }
+    description
+  }
+}
+```
+
+Expected Response:
+```json
+{"data"=>
+  {"createBattle"=>
+    {"id"=>"59",
+     "character1"=>{"id"=>"592"},
+     "character2"=>{"id"=>"593"},
+     "winner"=>{"id"=>"592", "fullName"=>"Full Name 1"},
+     "description"=>"In the realm of Hesperia, a land shrouded in mystery and magic, an epic battle unfolded between two formidable warriors..."
+    }
+  }
+}
+```
+</details>
 
 ## Schema
 ```
